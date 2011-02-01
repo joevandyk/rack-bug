@@ -21,7 +21,7 @@ module Rack
         end
 
         def time
-          @end_time - @start_time
+          (@end_time || Time.now) - @start_time
         end
 
         def exclusive_time
