@@ -12,7 +12,7 @@ class Rack::Bug
         ActiveRecord.const_set :Base, Class.new
       end
     end
-    
+
     after do
       Object.send :remove_const, :ActiveRecord if @added_active_record
     end

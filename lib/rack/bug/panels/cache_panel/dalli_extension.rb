@@ -8,9 +8,9 @@ begin
         perform_without_rack_bug(op, *args)
       end
     end
-    
+
     alias_method_chain :perform, :rack_bug
   end
-    
+
 rescue NameError, LoadError
 end

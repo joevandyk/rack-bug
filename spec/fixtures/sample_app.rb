@@ -15,7 +15,7 @@ class SampleApp < Sinatra::Base
   configure :test do
     set :raise_errors, true
   end
-  
+
   get "/redirect" do
     redirect "/"
   end

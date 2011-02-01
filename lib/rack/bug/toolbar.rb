@@ -8,7 +8,7 @@ module Rack
       def initialize(app)
         @app = app
       end
-      
+
       def call(env)
         @env = env
         @env["rack-bug.panels"] = []
@@ -18,9 +18,9 @@ module Rack
         Rack::Bug.disable
 
         @response = Rack::Response.new(body, status, headers)
-        
+
         inject_toolbar if response_type_okay_to_modify?
-        
+
         return @response.to_a
       end
 

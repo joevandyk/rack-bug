@@ -5,23 +5,23 @@
     * Can use LoggerPanel on ruby stdlib Logger in non-rails app (Tim Connor)
 
   * Bug fixes
-  
+
     * Fix profile, explain and select in the queries tab, fixes issue #22 (ebertech)
-    
+
   * Minor fixes
-  
+
     * Explicitly require 'digest/sha1' (Jérémy Lecour)
     * Eliminate unreachable code in params signature validation (Tim Connor)
 
   * Compatibilty
 
     * Make Redis panel compatible with latest redis-rb gem, without breaking older redis-rb versions (Luke Melia)
-  
+
   * Other
-  
+
     * Refactoring and code cleanup (Tim Connor)
     * Testing cleanup - better isolation of Rails vs. non-Rails in tests (Tim Connor)
-  
+
 == 0.3.0 / 2010-05-28
 
   * New features

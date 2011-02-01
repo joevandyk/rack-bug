@@ -6,9 +6,9 @@ require "rack/bug/autoloading"
 
 class Rack::Bug
   include Options
-  
+
   VERSION = "0.3.0"
-  
+
   class SecurityError < StandardError
   end
 
@@ -28,7 +28,7 @@ class Rack::Bug
     @app = asset_server(app)
     initialize_options options
     instance_eval(&block) if block_given?
-    
+
     @toolbar = Toolbar.new(RedirectInterceptor.new(@app))
   end
 
@@ -44,8 +44,8 @@ class Rack::Bug
       @app.call(env)
     end
   end
-  
-private 
+
+private
 
   def toolbar_xhr?
     !@original_request.xhr? || @original_request.path =~ /^\/__rack_bug__/
@@ -58,7 +58,7 @@ private
   def public_path
     ::File.expand_path(::File.dirname(__FILE__) + "/bug/public")
   end
-  
+
   def toolbar_requested?
     @original_request.cookies["rack_bug_enabled"]
   end
@@ -79,5 +79,5 @@ private
 
     actual_sha == expected_sha
   end
-  
+
 end

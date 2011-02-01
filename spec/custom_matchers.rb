@@ -10,7 +10,7 @@ module CustomMatchers
       end
     end
   end
-  
+
   def have_heading(text)
     simple_matcher("have heading") do |response|
       response.should have_selector("#rack_bug_toolbar li") do |heading|

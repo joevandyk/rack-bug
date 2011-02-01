@@ -14,7 +14,7 @@
   <div id="rack_bug_toolbar">
     <ul class="panels">
       <li id="rb_debug_button">Rack::Bug</li>
-    
+
       <% panels.each do |panel| %>
         <li>
           <% if panel.has_content? %>
@@ -28,7 +28,7 @@
       <% end %>
     </ul>
   </div>
-  
+
   <% panels.each do |panel| %>
     <% if panel.has_content? %>
       <div class="panel_content" id="<%= panel.name %>">
@@ -37,6 +37,6 @@
       </div>
     <% end %>
   <% end %>
-  
+
   <div id="rack_bug_debug_window" class="panel_content"></div>
 </div>

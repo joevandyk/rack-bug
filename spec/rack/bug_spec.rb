@@ -48,7 +48,7 @@ describe Rack::Bug do
       response = get "/redirect"
       response.status.should == 302
     end
-    
+
     it "does not show the interception page" do
       response = get "/redirect"
       response.body.should_not contain("Location: /")
@@ -59,13 +59,13 @@ describe Rack::Bug do
       response = get "/redirect"
       response.should_not have_selector("div#rack_bug")
      end
-    
+
     it "does not insert the toolbar if even toolbar requested" do
       response = get "/redirect"
       response.should_not have_selector("div#rack_bug")
      end
   end
-  
+
   context "redirected when configured to intercept redirects" do
     it "shows the interception page" do
       response = get "/redirect", {}, "rack-bug.intercept_redirects" => true
@@ -76,12 +76,12 @@ describe Rack::Bug do
       response = get "/redirect", {}, "rack-bug.intercept_redirects" => true
       response.should have_selector("a[href='/']")
     end
-    
+
     it "inserts the toolbar if requested" do
       response = get "/redirect", {}, "rack-bug.intercept_redirects" => true
       response.should have_selector("div#rack_bug")
     end
-    
+
     it "does not inserts the toolbar if not requested" do
       header 'cookie', ""
       response = get "/redirect", {}, "rack-bug.intercept_redirects" => true
