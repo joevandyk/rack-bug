@@ -9,7 +9,8 @@ if defined?(ActiveRecord)
 
       alias_method_chain :after_initialize, :rack_bug
     else
-      def after_initialize
+      after_initialize :record_ar_panel
+      def record_ar_panel
         Rack::Bug::ActiveRecordPanel.record(self.class.base_class.name)
       end
     end
